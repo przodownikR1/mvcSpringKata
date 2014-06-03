@@ -1,0 +1,4 @@
+mvcSpringKata
+=============
+
+spring mvc kata
