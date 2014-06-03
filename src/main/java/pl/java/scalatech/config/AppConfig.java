@@ -9,6 +9,6 @@ import org.springframework.context.annotation.Configuration;
  * Creating time :  3 cze 2014
  */
 @Configuration
-@ComponentScan(basePackages = "pl.java.scalatech")
+@ComponentScan
 public class AppConfig {
 }

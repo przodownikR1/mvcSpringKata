@@ -42,7 +42,7 @@ public class AppInitializer implements WebApplicationInitializer {
 
         AnnotationConfigWebApplicationContext appContext = new AnnotationConfigWebApplicationContext();
         appContext.register(WebMvcConfig.class);
-        log.info("++++                  getContext  {}", appContext.getDisplayName());
+        System.err.println("++++                  getContext  {} "+  appContext.getDisplayName());
         return appContext;
     }
 
