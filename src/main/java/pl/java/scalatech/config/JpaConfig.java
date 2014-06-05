@@ -7,6 +7,7 @@ import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -23,9 +24,10 @@ import org.springframework.transaction.PlatformTransactionManager;
  * Creating time :  3 cze 2014
  */
 @Configuration
+@Profile("dev")
 public class JpaConfig {
 
-    @Bean
+    @Bean(destroyMethod = "close")
     public DataSource dataSource() {
         EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
         return builder.setType(EmbeddedDatabaseType.HSQL).build();
