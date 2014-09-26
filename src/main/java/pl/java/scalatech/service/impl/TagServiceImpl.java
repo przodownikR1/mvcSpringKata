@@ -32,6 +32,7 @@ public class TagServiceImpl implements TagService {
     }
 
     @Override
+    @Transactional
     public Tag saveTag(Tag tag) {
         return tagRepository.save(tag);
     }
@@ -42,6 +43,7 @@ public class TagServiceImpl implements TagService {
     }
 
     @Override
+    @Transactional
     public void remove(Tag tag) {
         tagRepository.delete(tag);
     }
